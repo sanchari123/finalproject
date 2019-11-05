@@ -1,0 +1,42 @@
+{{>menubarlogin}}
+{{#if error}}
+<div class="alert alert-error">
+  <strong>Danger!!</strong>{{error}}
+</div>
+{{else}}
+<div class="container">
+    <div class="row">
+{{#each users}}
+<div class="col-md-4">
+    <div class="feature-box">
+            <div class="feature-img">
+                <div style="height: 40px;"></div>
+                <a href="/user/deleteUser/{{this._id}}"><div class="price" style="cursor:grab">
+                    <p style="text-align: center">-</p>
+                </div>
+                </a>
+            </div>
+            <div class="feature-details">
+                    <h4 style="color: rgb(180, 121, 12)">{{this.fullname}}</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <p style="color:rgb(153, 105, 16);font-size:20px;font-weight:bold;">Email Address</p>
+                            <p style="color:rgb(228, 149, 3);font-size:15px;">{{this.email}}</p>
+                            </li>
+                        <li class="list-group-item">
+                            <p style="color:rgb(151, 106, 23);font-size:20px;font-weight:bold;">Phone Number</p>
+                            <p style="color:rgb(199, 137, 21);font-size:15px;">{{this.phonenumber}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p style="color:rgb(145, 102, 23);font-size:20px;font-weight:bold;">Address</p>
+                            <p style="color:rgb(199, 137, 21);font-size:15px;">{{this.addressLine}}</p>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+</div>
+<br>
+{{/each}}
+</div>
+</div>
+{{/if}}

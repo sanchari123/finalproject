@@ -1,0 +1,37 @@
+{{>menubarlogin}}
+
+
+{{#if error}}
+<div class="alert alert-error">
+  <strong>Danger!!</strong>{{error}}
+</div>
+{{else}}
+<div class="container">
+  <div class="row">
+{{#each orders.myorder}}
+<div class="col-md-4">
+    <div class="feature-box">
+            <div class="feature-img">
+              <img src="/{{this.imageurl.[0]}}">
+            </div>
+            <div class="feature-details">
+                    <h4 style="color: rgb(180, 121, 12);margin-bottom:15px;">{{this.email}}</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <p class="card-text-all">Tid:</p>
+                            <p class="card-text-suball">{{this.tid}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="card-text-all">Place Name</p>
+                            <p class="card-text-suball">{{this.name}}</p>
+                        </li>
+                    </ul>
+                <a href="/user/paywithpaytm/{{this._id}}"><button type="button" class="btn btn-warning">Pay Now</button></a>
+            </div>
+        </div>
+</div>
+<br>
+{{/each}}
+</div>
+</div>
+{{/if}}

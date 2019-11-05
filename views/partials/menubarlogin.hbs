@@ -1,0 +1,75 @@
+<br/>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="/">Adventure World</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">HOME</a>
+      </li>
+
+        <li class="nav-item">
+          {{#if authenticated}}
+        <a class="nav-link" href="/user/logout">LOGOUT</a>
+      {{else}}
+        <a class="nav-link" href="/user/userreg">REG</a>
+        {{/if}}
+      </li>
+      {{#if authenticated}}
+      <span></span>
+      {{else}}
+       <li class="nav-item">
+        <a class="nav-link" href="/user/userlogin">LOGIN</a>
+      </li>
+      {{/if}}
+      {{#if admin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/packageupload">UPLOAD PACKAGE</a>
+      </li>
+      {{/if}}
+      {{#ifcond authenticated admin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/package/all/packages">TOURS</a>
+      </li>
+      {{/ifcond}}
+      {{#ifcond authenticated admin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/rules">RULES & REGULATIONS</a>
+      </li> 
+      {{/ifcond}}
+      {{#ifcond authenticated admin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/contactus">CONTACTUS</a>
+      </li> 
+      {{/ifcond}}
+      {{#ifcond authenticated admin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/user/allOrders">ORDERS</a>
+      </li>
+      {{/ifcond}}
+      {{#if admin}}
+       <li class="nav-item">
+        <a class="nav-link" href="/admin/allUsers">All USERS</a>
+      </li>
+      {{/if}}
+      {{#if admin}}
+       <li class="nav-item">
+        <a class="nav-link" href="/admin/allPackages">All PACKAGES</a>
+      </li>
+      {{/if}}
+      {{#if admin}}
+       <li class="nav-item">
+        <a class="nav-link" href="/admin/feedback">FEEDBACKS</a>
+      </li>
+      {{/if}}
+      {{#if admin}}
+       <li class="nav-item">
+        <a class="nav-link" href="/admin/search/tid">SEARCH BY TID</a>
+      </li>
+      {{/if}}
+    </ul>
+    </div>
+ </nav>
+ <br/>

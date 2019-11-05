@@ -1,0 +1,106 @@
+{{>menubarlogin}}
+
+<section class="header">
+    <div class="container">
+      <img src="images/travel.png">  
+    </div>
+    <h1>Travel Across The Globe</h1>
+    <p>To Travel is to Live!!</p>
+    <form method="POST" action="/package/search">
+    <div class="input-group">
+        <input type="text" class="form-control" name="searchstring" placeholder="Search by package place name" >
+        <div class="input-group-append">
+            <input type="submit" value="Search" class="input-group-text btn"/>
+        </div>
+    </div>
+    </form>
+</section>
+<section class="features">
+    <h1>Featured Destinations</h1>
+    <div class="container">
+        <div class="row">
+            {{#each package}}
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="/{{this.imageurl.[1]}}">
+                        <div class="price">
+                            <center><p style="font-size: 20px;">+</p></center>
+                        </div>
+                        <div class="rating">
+                                <i class="fa fa-star" ></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o" ></i>
+                        </div>
+                    </div>
+                    <div class="feature-details">
+                         <h4>{{this.name}}</h4>
+                         <p>This is {{this.name}} a awsome place to visit.We are going to visit {{this.places.[0]}},
+                            {{this.places.[1]}},{{this.places.[3]}} etc.So you now can imagine what will be the enjoyment
+                            between us. Our tour guide,{{this.tourmanager.name}} will assure you a good assitence.
+                         </p>
+                             <div>
+                                 <span>
+                                        <i class="fa fa-map-maker"></i>{{this.name}}
+                                 </span>
+                             </div>
+                    </div>
+                    
+                </div>
+            </div>
+            {{/each}}
+</section>                
+<section class="banner">
+<div class="banner-highlights">
+    <div class="container">
+        <div class="row">
+             <div class="col-md-8">
+                 <h2>Get 30% on top destination</h2>
+                 <p>Book Your Tickets Before 31st July and avail 30% flat discount.
+                     Please do contact with your tour guide for payment and discounts
+                     </p>
+                 <div class="col-md-4">
+                 <a href="/package/all/packages/"><input type="submit" value="Book Now" class="booking-btn"/></a>
+                 </div>
+             </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+<img src="images/travel.png" class="footer-logo">
+
+<p>As a travel writer, I try my hardest to describe places and destinations of my readers. However, 
+    there are just some things and experiences that are too beautiful to put down in words. 
+    To me, one of the most beautiful things about travel is the fact that every day is different.
+     There are no routines, no set rules, or no expectations. You can do what you want, whenever you please.</p>
+            </div>
+            <div class="col-md-3">
+                <h4>Features</h4>
+                <p>Deals & Offers</p>
+                <p>Customer Reviews</p>
+                <p>Cancellation Policies</p>
+                </div>
+                <div class="col-md-3">
+                        <h4>Quick Contact</h4>
+                        <p><i class="fa fa-phone-square"></i>+91 8981005131</p>
+                        <p><i class="fa fa-envelope"></i>tool@gmail.com</p>
+                        <p><i class="fa fa-home"></i> 23 shreedhar industrial estate,opp.hyundai service center</p>
+                    </div>
+                    <div class="col-md-3">
+                            <h4>Follow us</h4>
+                            <p><i class="fa fa-facebook-official"></i>Facebook</p>
+                            <p><i class="fa fa-instagram"></i>Instagram</p>
+                            <p><i class="fa fa-twitter"></i>Twitter</p>
+                        </div>
+        </div>
+        <hr>
+        <p class="copyright">Made with <i class="fa fa-heart"></i> by Us</p>
+    </div>
+</section>

@@ -1,0 +1,68 @@
+{{>menubarlogin}}
+<link rel="stylesheet" href="card.css">
+{{#if error}}
+<div class="alert alert-error">
+  <strong>Danger!!</strong>{{error}}
+</div>
+{{else}}
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 360px; overflow: hidden; border-radius: 1px;">
+        <img src="/{{package.imageurl.[0]}}" alt="Man with backpack"    
+            class="d-block w-full">
+
+  <div class="px-2 py-2">
+    <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+      {{package.tid}}
+    </p>
+
+    <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+      {{package.name}}
+    </h1>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <h5>Amount of package</h5>
+            <p>{{package.amount}}</p>
+        </li>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <h5>Places</h5>
+        </li>
+        {{#each package.places}}
+        <li class="list-group-item">
+            <p>{{this}}</p>
+        </li>
+        {{/each}}
+        </ul>
+        <li class="list-group-item"><h5>StartDate: </h5>{{package.startdate}}</li>
+        <li class="list-group-item"><h5>EndDate:</h5> {{package.enddate}}</li>
+        <li class="list-group-item"><h5>Hotel Name:</h5> {{package.hotel}}</li>
+        <li class="list-group-item"><h5>MaximumSeat: </h5>{{package.maximumseat}}</li>
+        <h5 style="text-align:center">Manager Info</h5>
+        <li class="list-group-item"><h5>Name: </h5>{{package.tourmanager.name}}</li>
+        <li class="list-group-item"><h5>Email-id: </h5>{{package.tourmanager.mailid}}</li>
+        <li class="list-group-item"><h5>Phonenumber: </h5>{{package.tourmanager.phno}}</li>
+    </ul>
+
+  </div>
+</div>
+</div>
+<div class="col-md-6">
+  <form method="POST" action="/package/booking/{{package._id}}">
+    <div class="feature-box">
+      <div class="feature-details">
+          <p>Want to book?Grab a chance to visit those places</p>
+            <p style="padding: 10px;">Give the no. of seats want to book---></p>
+            <input type="text" name="seats" style="width:80%;padding:10px;">
+            <br>
+            <br>
+            <input type="submit" class="btn btn-warning">
+        </div>
+      </div>
+    </form>
+</div>
+</div>
+</div>
+{{/if}}

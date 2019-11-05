@@ -1,0 +1,59 @@
+{{>menubarlogin}}
+
+{{#if error}}
+<div class="alert alert-error">
+  <strong>Danger!!</strong>{{error}}
+</div>
+{{else}}
+<div class="container">
+<div class="row">
+{{#each package}}
+<div class="col-md-4">
+    <div class="feature-box">
+            <div class="feature-details">
+                    <h4 style="color: rgb(180, 121, 12)">{{this.name}}</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <p class="card-text-all">Tid of package</p>
+                            <p class="card-text-suball">{{this.tid}}</p>
+                            </li>
+                        <li class="list-group-item">
+                            <p class="card-text-all">Amount of package</p>
+                            <p class="card-text-suball">{{this.amount}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="card-text-all">Hotel</p>
+                            <p class="card-text-suball">{{this.hotel}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="card-text-all">Available seat</p>
+                            <p class="card-text-suball">{{this.maximumseat}}</p>
+                        </li>
+                        <ul class="list-group list-group-flush">
+                        <h4 style="color: rgb(180, 121, 12)">Places</h4>
+                        {{#each this.places}}
+                        <li class="list-group-item">
+                            <p class="card-text-suball">{{this}}</p>
+                        </li>
+                        {{/each}}
+                        </ul>
+                        <li class="list-group-item">
+                            <p class="card-text-all">No. of bookings</p>
+                            <p class="card-text-suball">{{this.bookingDone.length}}</p>
+                        </li>
+                    </ul>
+                    
+                    <a href="/admin/bookings/{{this._id}}">
+                    <button type="button" class="btn btn-warning">Show Bookings</button>
+                    </a>
+                    <a href="/admin/delete/package/{{this._id}}">
+                    <button type="button" class="btn btn-info">Delete Package</button>
+                    </a>
+            </div>
+        </div>
+</div>
+<br>
+{{/each}}
+</div>
+</div>
+{{/if}}

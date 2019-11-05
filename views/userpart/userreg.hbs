@@ -1,0 +1,72 @@
+{{>menubarlogin}}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 col-sm-8 mx-auto">
+       <div class="card">
+          <div class="card-body" style="background-color: #eeefff">
+                                                    
+            <div class="mt-2 text-center">
+               <h3 style="color: brown;">CREATE ACCOUNT </h3>
+            </div>
+              
+            <div class="mt-4 text-left">
+                 
+              <form action="/auth/signup" method="POST">
+                                                             
+                <div class="form-group">
+                   <label for="name" class="text-uppercase font-weight-bold text-primary" >Name</label>
+                   <input type="text" name="fullname" class="form-control" placeholder="Enter Your Full Name" required >
+                </div>
+                        
+                <div class="form-group">
+                    <label for="email" class="text-uppercase font-weight-bold text-primary">Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter Your Email" required>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="mobileno"  class="text-uppercase font-weight-bold text-primary">Mobile No</label>
+                    <input type="tel" onfocus="refresh()" id="mobile" name="mobileno" class="form-control" placeholder="Enter Your Mobile No" required onblur="mobnocheck()">
+                </div>
+                <div class="text-danger font-weight-bold">
+                  <p id="mobileerror"></p>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="country" class="text-uppercase font-weight-bold text-primary">Country</label> &nbsp;&nbsp;&nbsp;
+                    <select name="country">
+                        <option value="INDIA">INDIA</option>
+						            <option value="INDIA">USA</option>
+						            <option value="INDIA">UK</option>
+                    </select>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="gender" class="text-uppercase font-weight-bold text-primary">Gender</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" value="Male" />
+                        <span class="text-info">Male</span> &nbsp;&nbsp;
+                    <input type="radio" name="gender" value="Female" />
+                        <span class="text-info">Female</span>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="password" class="text-uppercase font-weight-bold text-primary">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address" class="text-uppercase font-weight-bold text-primary">Address</label> &nbsp;&nbsp;&nbsp;<br/>
+                    <textarea name="address" placeholder="Write your Address Here" rows="4" cols="55" ></textarea>
+                </div>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;         
+                <input type="submit" class="btn btn-primary" value="CREATE ACOUNT"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p style="color: red;font-size:20px;padding:20px;">{{error}}</p>
+              </form>
+            </div> <!-- Form tag div -->
+          </div> <!-- Card Body End -->
+       </div> <!-- Card End -->
+     </div> <!-- Col alignment end -->
+    </div> <!-- Row End -->
+</div> <!-- Container End -->

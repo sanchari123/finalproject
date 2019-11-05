@@ -1,0 +1,39 @@
+{{>menubarlogin}}
+
+{{#if error}}
+<div class="alert alert-error">
+  <strong>Danger!!</strong>{{error}}
+</div>
+{{else}}
+<div class="container">
+<div class="row">
+{{#each feedback}}
+<div class="col-md-4">
+    <div class="feature-box">
+            <div class="feature-details">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <p class="card-text-all">Name</p>
+                            <p class="card-text-suball">{{this.fullname}}</p>
+                            </li>
+                        <li class="list-group-item">
+                            <p class="card-text-all">Email</p>
+                            <p class="card-text-suball">{{this.email}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="card-text-all">Phonenumber</p>
+                            <p class="card-text-suball">{{this.phonenumber}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="card-text-all">message</p>
+                            <p class="card-text-suball">{{this.message}}</p>
+                        </li>
+                </ul>
+            </div>
+        </div>
+</div>
+<br>
+{{/each}}
+</div>
+</div>
+{{/if}}

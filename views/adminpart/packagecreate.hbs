@@ -1,0 +1,83 @@
+{{>menubarlogin}}
+
+  <div class="row">
+    <div class="col-md-6 col-sm-8 mx-auto">
+       <div class="card">
+          <div class="card-body" style="background-color: #eeefff">
+                                                    
+            <div class="mt-2 text-center">
+               <h3 style="color: brown;">ADD NEW TOUR PAKAGE </h3>
+            </div>
+              
+            <div class="mt-4 text-left">
+                 
+              <form action="/admin/package/uploads" method="POST" enctype="multipart/form-data">
+                                                             
+                <div class="form-group">
+                   <label for="name" class="text-uppercase font-weight-bold text-primary" >Name</label>
+                   <input type="text" name="name" class="form-control" onblur="this.value = this.value.toUpperCase()" required >
+                </div>
+                        
+                <div class="form-group">
+                    <label for="amount" class="text-uppercase font-weight-bold text-primary">Amount</label>
+                    <input type="amount" name="amount" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                   <label for="place" class="text-uppercase font-weight-bold text-primary" >Places</label>
+                   <input type="text" name="places" class="form-control" onblur="this.value = this.value.toUpperCase()" required 
+                   placeholder="please give multiple value comma separated">
+                </div>
+                                                         
+                <div class="form-group">
+                    <label for="sd" class="text-uppercase font-weight-bold text-primary">Start Date</label>
+                    <input type="date" name="startdate" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="ed" class="text-uppercase font-weight-bold text-primary">End Date</label>
+                    <input type="date" name="enddate" class="form-control">
+                </div>
+
+                <div class="form-group">
+                   <label for="hotel" class="text-uppercase font-weight-bold text-primary" >Hotel</label>
+                   <input type="text" name="hotel" class="form-control" onblur="this.value = this.value.toUpperCase()" required >
+                </div>
+                <div class="form-group">
+                   <label for="hotel" class="text-uppercase font-weight-bold text-primary" >Maximum seat</label>
+                   <input type="text" name="maximumseat" class="form-control" required >
+                </div>
+                <div class="mt-2 text-center">
+                    <h5 style="color: brown;"> Tour Manager Details </h5>
+                </div>
+
+                <div class="form-group">
+                   <label for="name" class="text-uppercase font-weight-bold text-primary" >Name</label>
+                   <input type="text" name="tname" class="form-control" onblur="this.value = this.value.toUpperCase()" required >
+                </div>
+
+                  <div class="form-group">
+                    <label for="mobileno" class="text-uppercase font-weight-bold text-primary">Mobile No</label>
+                    <input type="tel" name="tphno" class="form-control" placeholder="Enter Your Mobile No" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="text-uppercase font-weight-bold text-primary">Email</label>
+                    <input type="email" name="tmail" class="form-control" placeholder="Enter Your Email" required>
+                </div>
+                  <div class="form-group">
+                    <label for="email" class="text-uppercase font-weight-bold text-primary">Photos</label>
+                    <input type="file" name="photos" multiple class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <p style="color: red;font-size:20px;">{{error}}</p>
+                </div>        
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;         
+                <input type="submit" class="btn btn-primary" value="CREATE PACKAGE"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </form>
+            </div> <!-- Form tag div -->
+          </div> <!-- Card Body End -->
+       </div> <!-- Card End -->
+     </div> <!-- Col alignment end -->
+    </div> <!-- Row End -->
+</div> <!-- Container End -->

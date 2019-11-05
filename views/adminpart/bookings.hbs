@@ -1,0 +1,35 @@
+{{>menubarlogin}}
+
+{{#if error}}
+<div class="alert alert-error">
+  <strong>Danger!!</strong>{{error}}
+</div>
+{{else}}
+<div style="feature-box">
+<p style="text-align: center;font-weight:bold">Name: {{bookingData.name}}</p>
+<p style="text-align: center;font-weight:bold">Tid: {{bookingData.tid}}</p>
+</div>
+<div class="container">
+    <div class="row">
+{{#each bookingData.bookingDone}}
+<div class="col-md-4">
+    <div class="feature-box">
+            <div class="feature-details">
+                    <h4 style="color: rgb(180, 121, 12);margin-bottom:15px;">{{this.email}}</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <p class="card-text-all">Phonenumber</p>
+                            <p class="card-text-suball">{{this.phonenumber}}</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="card-text-all"></p>
+                            <p class="card-text-suball">{{this.addressLine}}</p>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+</div>
+{{/each}}
+</div>
+</div>
+{{/if}}

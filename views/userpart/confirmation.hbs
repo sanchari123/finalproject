@@ -1,0 +1,12 @@
+{{>menubarlogin}}
+
+
+{{#if error}}
+<div class="alert alert-error">
+  <strong>Danger!!</strong>{{error}}
+</div>
+{{else}}
+<div class="alert alert-success">
+  <strong>Success!</strong> successfully booked your seats
+</div>
+{{/if}}
