@@ -1,0 +1,68 @@
+#para1
+{  
+    text-align: center;  
+    color: red;  
+}  
+ 
+  
+ h1
+ {  
+    color:blueviolet;  
+    background-color: green;  
+    padding-left: 35px;  
+ } 
+ h2
+ {  
+    color:pink;  
+    background-color: yellowgreen;  
+    padding-left: 35px;  
+   
+ }   
+ h4
+ {  
+    color:white;  
+    background-color: peru;  
+    padding-left: 35px;  
+ }   
+ h3
+ { 
+
+    color: purple;  
+    background-color:orange; 
+    padding-left: 24px;  
+ }   
+ p#x
+ {  
+    color:purple; 
+    font-size: 18px; 
+    margin-left: 50px;
+ }  
+ p#y
+ {  
+    color:purple; 
+    font-size: 18px; 
+    margin-left: 50px;
+    
+ }  
+ p#z
+ {  
+    color:purple; 
+    font-size: 18px; 
+    margin-left: 50px;
+    
+ }  
+ .center {  
+    text-align: center;  
+    color:white;  
+} 
+section{  
+border:1px solid purple;  
+padding:15px;  
+margin:10px;  
+}  
+div1{
+    background-color:gold;
+    font-size: 18px; 
+    margin-left: 50px;
+    width:200px;
+}
